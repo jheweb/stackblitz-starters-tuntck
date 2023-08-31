@@ -1,0 +1,54 @@
+<div class="container  "> 
+
+  <div class="h1"> Library</div>
+  <div class="row g-5 " style="margin-bottom: 10px;">
+
+    <div class="col col-md-3" ><span class="h2"> Categories </span></div>
+
+    <div  class="col col-md-9 "><span class="h2"> Applets  </span></div>
+  </div>
+
+
+  <div class="row g-5">
+      <div class="col col-md-3">
+          <input type="text"  class="  border1 search-1" name="searchWord1" placeholder="Search applets" (input)="searchApplets($event)"  [(ngModel)]="searchWord"/>
+
+          <div   *ngFor="let item of categories  ; let i = index" class="item"   [ngClass]= "changeShow[i]  ? 'show' : 'hidden'"     [ngClass]= "changeColor[i]  ? 'style-1-a' : 'style-1-b'"       > 
+          
+              <span  (click)="seletCategory(item.category ,i)" style="padding-left: 10px; "     >  
+                  <span class="item-1" >
+                      {{item.category}}
+                  </span>
+                  <span class="rounded-circle item-2"   [ngClass]= "changeColor[i]  ? 'style-2-a' : 'style-2-b'" >
+                     {{item.names.length}} 
+                  </span>
+           
+          </span>
+
+          </div>
+
+      </div>
+      <div  class="col col-md-9">
+
+          <div   >
+              <div  *ngFor="let item of applets " >  
+              <input type="text" class="border bg-light bg-gradient item-3"    value="{{item}}"    >
+          
+          </div> 
+
+
+      </div>
+    </div>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
